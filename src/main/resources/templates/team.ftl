@@ -46,7 +46,6 @@
             <#if teams1?? &&(teams1?size>0)>
                 <#list teams1 as team>
                 <tr>
-
                     <td>${team.teamName}</td>
                     <td>${team.introduce}</td>
                     <td>${team.username}</td>
@@ -55,7 +54,7 @@
             </tr>
             <#else>
             <tr>
-                <td>未发现团队</td>
+                <td>没有发现团队</td>
             </tr>
             </#if>
             </tbody>

@@ -177,7 +177,6 @@ public class MainController {
                 teamVO.setState(teamUsers.get(j).getState());
                 teamVOList.add(teamVO);
             }
-            System.out.println(teamVOS);
             model.addAttribute("teams1",teamVOS);
             model.addAttribute("teams",teamVOList);
             return "team";
