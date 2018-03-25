@@ -41,6 +41,10 @@ public class MainController {
         model.addAttribute("user",user);
         return "index";
     }
+    @RequestMapping("/toRegister")
+    public String toRegister(){
+        return "register";
+    }
     @RequestMapping("/activity")
     public String  activity(Model model,HttpServletRequest request){
         List<ArticleVO> articleVOS=new ArrayList<>();

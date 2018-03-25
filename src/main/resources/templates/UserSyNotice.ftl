@@ -45,7 +45,7 @@
                 <tr>
 
                     <td>${notice.content}</td>
-                    <td>${notice.insert_time?string("yyyy-MM-dd HH:mm:ss")}</td>
+                    <td>${notice.insertTime?string("yyyy-MM-dd HH:mm:ss")}</td>
                 </#list>
             </tr>
             <#else>

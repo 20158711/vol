@@ -13,6 +13,6 @@ import java.util.List;
 @Repository
 public interface NotinceDao extends JpaRepository<Notice,Long> {
     List<Notice> findByTeamIdAndType(Long id,Integer i);
-    void deleteByIdAndType(Long id,Integer i);
+    void deleteById(Long id);
 
 }
