@@ -1,12 +1,14 @@
 package com.volunteer.controller;
 
 import com.volunteer.pojo.*;
+import com.volunteer.pojo.vo.ArticleVO;
 import com.volunteer.pojo.vo.EntryVO;
 import com.volunteer.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
@@ -94,6 +96,21 @@ public class TeamController {
             model.addAttribute("user",users);
         }
         return "seeNumber";
+    }
+    @RequestMapping("/teamInfo")
+    public String teamInfo(Model model, @RequestParam("id") Long id){
+        Article article=articleService.findById(id);
+        ArticleVO articleVO=new ArticleVO();
+        articleVO.setTitle(article.getTitle());
+        articleVO.setContent(article.getContent());
+        articleVO.setInsertTime(article.getInsertTime());
+        if (article.getAllowEntry()){
+            articleVO.setIsInsert("1");
+        }else {
+            articleVO.setIsInsert("0");
+        }
+        model.addAttribute("article",articleVO);
+        return "";
     }
 
 }
