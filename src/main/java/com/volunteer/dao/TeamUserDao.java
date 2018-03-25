@@ -10,6 +10,7 @@ import java.util.List;
 public interface TeamUserDao extends JpaRepository<TeamUser,Long>{
 
     TeamUser findByTeamIdAndUserId(Long teamId,Long userId);
+    List<TeamUser> findByUserIdNot(Long userId);
     List<TeamUser> findByUserId(Long userId);
     List<TeamUser> findByTeamId(long teamId);
     List<TeamUser> findByTeamIdAndState(Long teamId,Integer state);
