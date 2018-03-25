@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>个人资料</title>
+    <title>团队公告</title>
     <link href="${request.contextPath}/static/plugins/fullPage/jquery.fullPage.css" rel="stylesheet"/>
     <link href="${request.contextPath}/static/plugins/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="${request.contextPath}/static/plugins/material-design-iconic-font-2.2.0/css/material-design-iconic-font.min.css" rel="stylesheet"/>
@@ -48,7 +48,7 @@
 
                     <td>${notice.content}</td>
                     <td>${notice.insertTime?string("yyyy-MM-dd HH:mm:ss")}</td>
-                    <td><a href="${request.contextPath}/delTeamNotice?${notice.id}"><button>删除</button></a> </td>
+                    <td><a href="${request.contextPath}/delTeamNotice?id=${notice.id}"><button>删除</button></a> </td>
                 </#list>
             </tr>
             <#else>

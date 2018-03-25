@@ -41,4 +41,14 @@ public class NoticeServiceImpl implements NoticeService {
     public void delTeamNotice(Long id) {
         notinceDao.deleteById(id);
     }
+
+    @Override
+    public List<Notice> getAll() {
+        return notinceDao.findByType(0);
+    }
+
+    @Override
+    public List<Notice> getT() {
+        return notinceDao.findByType(1);
+    }
 }

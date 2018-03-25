@@ -48,7 +48,7 @@
 
                     <td>${notice.content}</td>
                     <td>${notice.insertTime?string("yyyy-MM-dd HH:mm:ss")}</td>
-                    <td><a href="${request.contextPath}/delTeamNotice?${notice.id}"><button>删除</button></a> </td>
+                    <td><a href="${request.contextPath}/delTeamNotice?id=${notice.id}"><button>删除</button></a> </td>
                 </#list>
             </tr>
             <#else>

@@ -151,4 +151,21 @@ public class TeamController {
 
     }
 
+    @RequestMapping("/teamIn")
+    public String teamIn(@RequestParam(value = "id")Long id,Model model){
+        Team team=teamService.findById(id);
+        model.addAttribute("team",team);
+        return "teamIn";
+
+    }
+    @RequestMapping("/modifyTeam")
+    @ResponseBody
+    public Map<String, Object> modifyTeam(Team team){
+        teamService.update(team);
+        Map<String, Object> resultMap = new LinkedHashMap<>();
+        resultMap.put("message", "修改成功");
+        return resultMap;
+    }
+
+
 }

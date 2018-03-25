@@ -43,25 +43,28 @@ public class NoticeController {
     }
     @RequestMapping("/userSeeNotice")
     public String userSeeNotice(Model model,HttpServletRequest request){
-        User user= (User) request.getSession().getAttribute("user");
-        List<TeamUser> teamUser=teamUserService.findByUserId(user.getId());
-        List<List<Notice>> notices=new ArrayList<>();
-        for (int i=0;i<teamUser.size();i++){
-            List<Notice> notice=noticeService.findAll(teamUser.get(i).getTeamId());
-            notices.add(notice);
-        }
+//        User user= (User) request.getSession().getAttribute("user");
+//        List<TeamUser> teamUser=teamUserService.findByUserId(user.getId());
+//        List<List<Notice>> notices=new ArrayList<>();
+//        for (int i=0;i<teamUser.size();i++){
+//            List<Notice> notice=noticeService.findAll(teamUser.get(i).getTeamId());
+//            notices.add(notice);
+//        }
+        List<Notice> notices=new ArrayList<>();
+        notices=noticeService.getAll();
         model.addAttribute("notice",notices);
         return "UserSyNotice";
     }
     @RequestMapping("/userSeeTeamNotice")
     public String userSeeTeamNotice(Model model,HttpServletRequest request){
-        User user= (User) request.getSession().getAttribute("user");
+        /*User user= (User) request.getSession().getAttribute("user");
         List<TeamUser> teamUser=teamUserService.findByUserId(user.getId());
         List<List<Notice>> notices=new ArrayList<>();
         for (int i=0;i<teamUser.size();i++){
             List<Notice> notice=noticeService.findTeamNotice(teamUser.get(i).getTeamId());
             notices.add(notice);
-        }
+        }*/
+        List<Notice> notices=noticeService.getT();
         model.addAttribute("notice",notices);
         return "UserTeamNotice";
     }

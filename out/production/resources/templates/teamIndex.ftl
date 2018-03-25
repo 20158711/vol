@@ -73,7 +73,7 @@
             </a>
             <ul class="main-menu">
                 <li>
-                    <a class="waves-effect" href="javascript:Tab.addTab('团队资料', '${request.contextPath}/teamInfo?id=${team.id}');"><i class="zmdi zmdi-account"></i>团队资料</a>
+                    <a class="waves-effect" href="javascript:Tab.addTab('团队资料', '${request.contextPath}/teamIn?id=${team.id}');"><i class="zmdi zmdi-account"></i>团队资料</a>
                 </li>
             </ul>
         </div>

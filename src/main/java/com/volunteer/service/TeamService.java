@@ -10,5 +10,6 @@ public interface TeamService {
     Team findTeamByLoginNameAndPassword(String loginName,String password);
     Team save(Team team);
     List<Team> findAll();
+    void update(Team team);
 
 }
