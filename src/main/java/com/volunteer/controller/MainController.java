@@ -172,4 +172,33 @@ public class MainController {
         }
     }
 
+
+
+    //注册
+    @RequestMapping("/userRegister")
+    @ResponseBody
+    public Map<String, Object> userRsgister(User user,HttpServletRequest request){
+        Map<String, Object> resultMap = new LinkedHashMap<>();
+        User user1=userService.findUserByLoginNameAndPassword(user.getLoginName(),user.getPassword());
+        if (user1==null){
+            user.setAge(0);
+            user.setUsername("**");
+            userService.save(user);
+            request.getSession().setAttribute("user",user);
+            resultMap.put("status",200);
+            resultMap.put("message","注册成功");
+        }else {
+            resultMap.put("status",500);
+            resultMap.put("message","该账户已经存在");
+        }
+        return resultMap;
+
+    }
+
+
+    @RequestMapping("/toTeamRegister")
+    public String toTeamRegister(){
+        return "TeamRegister";
+    }
+
 }

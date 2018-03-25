@@ -42,7 +42,7 @@
                 alert("请输入登录密码")
             } else {
                 $.ajax({
-					url:"${request.contextPath}/userLogin",
+					url:"${request.contextPath}/userRegister",
 					type:"post",
 					dataType:"json",
 					data:{loginName:loginName,password:password},
@@ -59,34 +59,6 @@
             }
         }
 
-	</script>
-	<script>
-		function teamLogin() {
-			var loginName=$("#loginName").val();
-			var password=$("#password").val();
-            if (loginName == null || loginName == "") {
-                alert("请输入登录账户")
-            } else if (password == null || password == "") {
-                alert("请输入登录密码")
-            } else {
-                $.ajax({
-                    url:"${request.contextPath}/teamLogin",
-                    type:"post",
-                    dataType:"json",
-                    data:{loginName:loginName,password:password},
-                    success:function (result) {
-                        if(result.status!=200){
-                            alert(result.message)
-                        }else {
-                            alert(result.message)
-                            location.href ="${request.contextPath}/teamIndex";
-                        }
-                    }
-                })
-
-            }
-			
-        }
 	</script>
 </head>
 <body>
@@ -117,7 +89,6 @@
         <span class="input-group-addon"><#--<i class="zmdi zmdi-account"></i>--></span>
         <div style="align-content: center">
             <center><button onclick="sub()">个人</button>&nbsp;&nbsp;
-				<button onclick="teamLogin()">团队</button>&nbsp;&nbsp;
 				<a href="${request.contextPath}/toLogin"><button>登录</button></a> </center>
 		</div>
 	</div>
