@@ -99,18 +99,25 @@ public class TeamController {
     }
     @RequestMapping("/teamInfo")
     public String teamInfo(Model model, @RequestParam("id") Long id){
-        Article article=articleService.findById(id);
-        ArticleVO articleVO=new ArticleVO();
-        articleVO.setTitle(article.getTitle());
-        articleVO.setContent(article.getContent());
-        articleVO.setInsertTime(article.getInsertTime());
-        if (article.getAllowEntry()){
-            articleVO.setIsInsert("1");
-        }else {
-            articleVO.setIsInsert("0");
+        String teamName=teamService.findById(id).getTeamName();
+        List<ArticleVO> articleVOList=new ArrayList<>();
+        for (Article article : articleService.findByTeamId(id)) {
+            ArticleVO articleVO=new ArticleVO();
+            articleVO.setTitle(article.getTitle());
+            articleVO.setContent(article.getContent());
+            articleVO.setInsertTime(article.getInsertTime());
+            articleVO.setTeamName(teamName);
+            if (article.getAllowEntry()){
+                articleVO.setIsInsert("1");
+            }else {
+                articleVO.setIsInsert("0");
+            }
+            articleVOList.add(articleVO);
         }
-        model.addAttribute("article",articleVO);
+
+        model.addAttribute("article",articleVOList);
         return "teamActivity";
+
     }
 
 }
