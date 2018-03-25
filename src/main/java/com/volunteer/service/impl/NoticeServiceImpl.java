@@ -34,11 +34,11 @@ public class NoticeServiceImpl implements NoticeService {
 
     @Override
     public void delSyNotice(Long id) {
-         notinceDao.deleteByIdAndType(id,0);
+         notinceDao.deleteById(id);
     }
 
     @Override
     public void delTeamNotice(Long id) {
-        notinceDao.deleteByIdAndType(id,1);
+        notinceDao.deleteById(id);
     }
 }

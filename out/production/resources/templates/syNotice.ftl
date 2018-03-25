@@ -47,7 +47,7 @@
                 <tr>
 
                     <td>${notice.content}</td>
-                    <td>${notice.insert_time?string("yyyy-MM-dd HH:mm:ss")}</td>
+                    <td>${notice.insertTime?string("yyyy-MM-dd HH:mm:ss")}</td>
                     <td><a href="${request.contextPath}/deleteSyNotice?id=${notice.id}"><button>删除</button></a></td>
                 </#list>
             </tr>

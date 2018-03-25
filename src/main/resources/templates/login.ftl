@@ -118,7 +118,7 @@
         <div style="align-content: center">
             <center><button onclick="sub()">个人</button>&nbsp;&nbsp;
 				<button onclick="teamLogin()">团队</button>&nbsp;&nbsp;
-				<button>注册</button></center>
+				<a href="${request.contextPath}/toRegister"><button>注册</button></a></center>
 		</div>
 	</div>
     <script src="${request.contextPath}/static/plugins/jquery.1.12.4.min.js"></script>
