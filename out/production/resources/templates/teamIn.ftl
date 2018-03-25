@@ -16,7 +16,7 @@
         var teamName=$("#teamName").val();
         var introduce=$("#introduce").val();
         $.ajax({
-            url:"${request.contextPath}/modifyInfo",
+            url:"${request.contextPath}/modifyTeam",
             type:"post",
             dataType:"json",
             data:{"id":id,"teamName":teamName,"introduce":introduce},

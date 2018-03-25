@@ -39,7 +39,7 @@ public class TeamServiceImpl implements TeamService {
         Team team1=teamDao.findById(team.getId()).get();
         team1.setIntroduce(team.getIntroduce());
         team1.setTeamName(team.getTeamName());
-        teamDao.save(team);
+        teamDao.save(team1);
     }
 
 
