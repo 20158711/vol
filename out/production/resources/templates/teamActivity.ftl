@@ -40,24 +40,18 @@
                 <th>活动内容</th>
                 <th>团队名称</th>
                 <th>创建时间</th>
-                <th>申请加入</th>
             </tr>
             </thead>
             <tbody>
             <#if article?? &&(article?size>0)>
-                <#--<#list article as article>-->
+                <#list article as article>
                 <tr>
 
                     <td>${article.title}</td>
                     <td>${article.content}</td>
                     <td>${article.teamName}</td>
                     <td>${article.insertTime?string("yyyy-MM-dd HH:mm:ss")}</td>
-                    <#if (article.isInsert=="0")>
-                        <td>不可申请</td>
-                    <#else>
-                        <td><#--<a href="${request.contextPath}/reply?id="+${article.id}>--><button onclick="reply(${article.id})">申请</button><#--</a>--></td>
-                    </#if>
-                <#--</#list>-->
+                </#list>
             </tr>
             <#else>
             <tr>
@@ -67,42 +61,7 @@
             </tbody>
         </table>
     </div>
-    <#--<div style="margin: 40px">
-        <table class="table">
-            <caption>已参加活动</caption>
-            <thead>
-            <tr>
-                <th>活动名称</th>
-                <th>活动内容</th>
-                <th>团队名称</th>
-                <th>创建时间</th>
-                <th>是否加入</th>
-            </tr>
-            </thead>
-            <tbody>
-            <#if articles?? &&(articles?size>0)>
-                <#list articles as articles>
-                <tr>
 
-                    <td>${articles.title}</td>
-                    <td>${articles.content}</td>
-                    <td>${articles.teamName}</td>
-                    <td>${articles.insertTime?string("yyyy-MM-dd HH:mm:ss")}</td>
-                    <#if (articles.isInsert=="0")>
-                        <td>还未同意</td>
-                    <#else>
-                        <td>申请成功</td>
-                    </#if>
-                </#list>
-            </tr>
-            <#else>
-            <tr>
-                <td>还没申请任何活动</td>
-            </tr>
-            </#if>
-            </tbody>
-        </table>
-    </div>-->
 </section>
 <script src="${request.contextPath}/static/plugins/jquery.1.12.4.min.js"></script>
 <script src="${request.contextPath}/static/plugins/bootstrap-3.3.0/js/bootstrap.min.js"></script>

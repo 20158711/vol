@@ -25,6 +25,11 @@ public class EntryFormServiceImpl implements EntryFormService {
     }
 
     @Override
+    public EntryForm findByArticleIdAndUserId(Long articleId, Long userId) {
+        return entryFormDao.findByArticleIdAndUserId(articleId, userId);
+    }
+
+    @Override
     public EntryForm applyAddToTeam(Long id, Long userId) {
         EntryForm entryForm=entryFormDao.findByArticleIdAndUserId(id,userId);
         if (entryForm==null){
@@ -38,7 +43,11 @@ public class EntryFormServiceImpl implements EntryFormService {
 
     @Override
     public List<EntryForm> findByAid(Long id) {
+        return entryFormDao.findByArticleId(id);
+    }
 
-        return entryFormDao.findByArticleIdAndState(id,1);
+    @Override
+    public EntryForm findById(Long id) {
+        return entryFormDao.findById(id).get();
     }
 }

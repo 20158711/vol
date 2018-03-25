@@ -12,4 +12,5 @@ public interface EntryFormDao extends JpaRepository<EntryForm,Long> {
     List<EntryForm> findByUserId(Long userId);
     EntryForm findByArticleIdAndUserId(Long id,Long userId);
     List<EntryForm> findByArticleIdAndState(Long id,Integer state);
+    List<EntryForm> findByArticleId(Long articleId);
 }

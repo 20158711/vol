@@ -74,6 +74,11 @@ public class TeamUserServiceImpl implements TeamUserService{
     }
 
     @Override
+    public TeamUser save(TeamUser teamUser) {
+        return teamUserDao.save(teamUser);
+    }
+
+    @Override
     public List<TeamVO> findTeamVoByTeamIdAndUserIdNotJoin( Long userId) {
         List<TeamUser> teamUserList = teamUserDao.findByUserId(userId);
         return getTeamVo(teamUserList);

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -61,25 +62,54 @@ public class TeamController {
         if (team==null){
             return "toLogin";
         }else {
-            List<Article> articles= (List<Article>) articleService.findById(team.getId());
+            List<Article> articles= articleService.findByTeamId(team.getId());
             for (int i=0;i<articles.size();i++){
-                List<EntryForm> entryForms=entryFormService.findByAid(articles.get(i).getId());
+                Article article=articles.get(i);
+                if (!article.getAllowEntry())
+                    continue;
+                List<EntryForm> entryForms=entryFormService.findByAid(article.getId());
                 List<EntryVO> entryVOS=new ArrayList<>();
                 for (int j=0;j<entryForms.size();j++){
                     EntryVO entryVO=new EntryVO();
-                    Article article=articleService.findById(entryForms.get(j).getArticleId());
                     entryVO.setId(article.getId());
                     entryVO.setContent(article.getContent());
                     entryVO.setTitle(article.getTitle());
                     User user=userService.findById(entryForms.get(j).getUserId());
+                    entryVO.setUserId(user.getId());
                     entryVO.setUsername(user.getUsername());
                     entryVO.setAge(user.getAge());
                     entryVOS.add(entryVO);
                 }
+                System.out.println(entryVOS);
                 model.addAttribute("entry",entryVOS);
             }
             return "seeReplys";
         }
+    }
+    @RequestMapping("/checkEntryApply")
+    public String checkEntryApply(@RequestParam("articleId")Long articleId,@RequestParam("userId")Long userId,@RequestParam("isAllow")Integer isAllow){
+        EntryForm entryForm=entryFormService.findByArticleIdAndUserId(articleId,userId);
+        if (isAllow==0){
+            entryForm.setState(2);
+        }else {
+            entryForm.setState(1);
+        }
+        entryFormService.save(entryForm);
+        return "redirect:/seeReply";
+    }
+    @RequestMapping("/checkApply")
+    public String checkApply(@RequestParam("userId")Long userId, @RequestParam("isAllow") Integer isAllow, HttpSession session){
+        Team team= (Team) session.getAttribute("team");
+        TeamUser teamUser=teamUserService.findByTeamIdAndUserId(team.getId(),userId);
+        //不同意
+        if (isAllow==0){
+            teamUser.setState(1);
+        }else{
+            teamUser.setState(2);
+        }
+        teamUserService.save(teamUser);
+        return "redirect:/seeReply";
+
     }
     @RequestMapping("/seeNumber")
     public String seeNumber(Model model,HttpServletRequest request){
@@ -107,6 +137,7 @@ public class TeamController {
             articleVO.setContent(article.getContent());
             articleVO.setInsertTime(article.getInsertTime());
             articleVO.setTeamName(teamName);
+            articleVO.setId(article.getId());
             if (article.getAllowEntry()){
                 articleVO.setIsInsert("1");
             }else {

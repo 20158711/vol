@@ -53,8 +53,8 @@
                     <td>${entry.content}</td>
                     <td>${entry.username}</td>
                     <td>${entry.age}</td>
-                    <td><button>同意</button></td>
-                    <td><button>不同意</button></td>
+                    <td><a href="/checkEntryApply?articleId=${entry.id}&userId=${entry.userId}&isAllow=1">同意</a></td>
+                    <td><a href="/checkEntryApply?articleId=${entry.id}&userId=${entry.userId}&isAllow=0">不同意</a></td>
                 </#list>
             </tr>
             <#else>

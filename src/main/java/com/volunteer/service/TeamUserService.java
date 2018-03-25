@@ -13,6 +13,7 @@ public interface TeamUserService {
     List<TeamUser> findByUserId(Long userId);
     TeamUser addTeamUser(TeamUser teamUser);
     List<TeamUser> findByTeamId(Long id);
+    TeamUser save(TeamUser teamUser);
     List<TeamVO> findTeamVoByTeamIdAndUserIdJoinEd(Long userId);
     List<TeamVO> findTeamVoByTeamIdAndUserIdNotJoin(Long userId);
 

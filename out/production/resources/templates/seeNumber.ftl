@@ -49,8 +49,8 @@
                     <td>${user.username}</td>
                     <td>${user.personalizedSignature}</td>
                     <td>${user.age}</td>
-                    <td><button>同意</button></td>
-                    <td><button>不同意</button></td>
+                    <td><a href="/checkApply?userId="+${user.id}+"&isAllow=1">同意</a></td>
+                    <td><a href="/checkApply?userId="+${user.id}+"&isAllow=2">不同意</button></td>
                 </#list>
             </tr>
             <#else>
