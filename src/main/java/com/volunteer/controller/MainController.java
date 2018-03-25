@@ -192,7 +192,6 @@ public class MainController {
             resultMap.put("message","该账户已经存在");
         }
         return resultMap;
-
     }
 
 

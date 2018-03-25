@@ -78,7 +78,7 @@ public class TeamController {
                 }
                 model.addAttribute("entry",entryVOS);
             }
-            return "seeReply";
+            return "seeReplys";
         }
     }
     @RequestMapping("/seeNumber")
@@ -110,7 +110,7 @@ public class TeamController {
             articleVO.setIsInsert("0");
         }
         model.addAttribute("article",articleVO);
-        return "";
+        return "teamActivity";
     }
 
 }
