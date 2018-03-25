@@ -83,9 +83,9 @@
             <li>
                 <a class="waves-effect" href="javascript:Tab.addTab('志愿活动', '${request.contextPath}/teamInfo?id=${team.id}');"><i class="zmdi zmdi-home"></i> 志愿活动</a>
             </li>
-            <li>
+            <#--<li>
                 <a class="waves-effect" href="javascript:Tab.addTab('资讯', '/manage/user/index');"><i class="zmdi zmdi zmdi-more"></i> 资讯</a>
-            </li>
+            </li>-->
             <li class="sub-menu system_menus system_1 6">
                 <a class="waves-effect" href="javascript:;"><i class="zmdi zmdi-lock-outline"></i> 志愿管理</a>
                 <ul>
