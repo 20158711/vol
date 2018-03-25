@@ -14,5 +14,6 @@ import java.util.List;
 public interface NotinceDao extends JpaRepository<Notice,Long> {
     List<Notice> findByTeamIdAndType(Long id,Integer i);
     void deleteById(Long id);
+    List<Notice> findByType(Integer i);
 
 }
