@@ -67,14 +67,17 @@ public class NoticeController {
     }
     @RequestMapping("/addSyNotice")
     public String addSyNotice(Notice notice,HttpServletRequest request){
-       /* Team team*/
+        Team team = (Team) request.getSession().getAttribute("team");
         notice.setType(0);
+        notice.setTeamId(team.getId());
         noticeService.addNotice(notice);
         return "seeNotice";
     }
     @RequestMapping("/addTeamNotice")
-    public String addTeamNotice(Notice notice){
+    public String addTeamNotice(Notice notice,HttpServletRequest request){
+        Team team = (Team) request.getSession().getAttribute("team");
         notice.setType(1);
+        notice.setTeamId(team.getId());
         noticeService.addNotice(notice);
         return "seeTeamNotice";
     }
