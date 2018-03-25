@@ -67,7 +67,7 @@ public class NoticeController {
     }
     @RequestMapping("/addSyNotice")
     public String addSyNotice(Notice notice,HttpServletRequest request){
-        Team team
+       /* Team team*/
         notice.setType(0);
         noticeService.addNotice(notice);
         return "seeNotice";
