@@ -8,35 +8,85 @@
 
     <link href="${request.contextPath}/static/plugins/fullPage/jquery.fullPage.css" rel="stylesheet"/>
     <link href="${request.contextPath}/static/plugins/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="${request.contextPath}/static/plugins/material-design-iconic-font-2.2.0/css/material-design-iconic-font.min.css" rel="stylesheet"/>
+    <link href="${request.contextPath}/static/plugins/material-design-iconic-font-2.2.0/css/material-design-iconic-font.min.css"
+          rel="stylesheet"/>
     <link href="${request.contextPath}/static/plugins/waves-0.7.5/waves.min.css" rel="stylesheet"/>
-    <link href="${request.contextPath}/static/plugins/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+    <link href="${request.contextPath}/static/plugins/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet"/>
     <link href="${request.contextPath}/static/css/admin.css" rel="stylesheet"/>
     <style>
         /** skins **/
-        #zheng-upms-server #header {background: #29A176;}
-        #zheng-upms-server .content_tab{background: #29A176;}
-        #zheng-upms-server .s-profile>a{background: url(images/zheng-upms.png) left top no-repeat;}
+        #zheng-upms-server #header {
+            background: #29A176;
+        }
 
-        #zheng-cms-admin #header {background: #455EC5;}
-        #zheng-cms-admin .content_tab{background: #455EC5;}
-        #zheng-cms-admin .s-profile>a{background: url(images/zheng-cms.png) left top no-repeat;}
+        #zheng-upms-server .content_tab {
+            background: #29A176;
+        }
 
-        #zheng-pay-admin #header {background: #F06292;}
-        #zheng-pay-admin .content_tab{background: #F06292;}
-        #zheng-pay-admin .s-profile>a{background: url(images/zheng-pay.png) left top no-repeat;}
+        #zheng-upms-server .s-profile > a {
+            background: url(images/zheng-upms.png) left top no-repeat;
+        }
 
-        #zheng-ucenter-home #header {background: #6539B4;}
-        #zheng-ucenter-home .content_tab{background: #6539B4;}
-        #zheng-ucenter-home .s-profile>a{background: url(images/zheng-ucenter.png) left top no-repeat;}
+        #zheng-cms-admin #header {
+            background: #455EC5;
+        }
 
-        #zheng-oss-web #header {background: #0B8DE5;}
-        #zheng-oss-web .content_tab{background: #0B8DE5;}
-        #zheng-oss-web .s-profile>a{background: url(images/zheng-oss.png) left top no-repeat;}
+        #zheng-cms-admin .content_tab {
+            background: #455EC5;
+        }
 
-        #test #header {background: test;}
-        #test .content_tab{background: test;}
-        #test .s-profile>a{background: url(test) left top no-repeat;}
+        #zheng-cms-admin .s-profile > a {
+            background: url(images/zheng-cms.png) left top no-repeat;
+        }
+
+        #zheng-pay-admin #header {
+            background: #F06292;
+        }
+
+        #zheng-pay-admin .content_tab {
+            background: #F06292;
+        }
+
+        #zheng-pay-admin .s-profile > a {
+            background: url(images/zheng-pay.png) left top no-repeat;
+        }
+
+        #zheng-ucenter-home #header {
+            background: #6539B4;
+        }
+
+        #zheng-ucenter-home .content_tab {
+            background: #6539B4;
+        }
+
+        #zheng-ucenter-home .s-profile > a {
+            background: url(images/zheng-ucenter.png) left top no-repeat;
+        }
+
+        #zheng-oss-web #header {
+            background: #0B8DE5;
+        }
+
+        #zheng-oss-web .content_tab {
+            background: #0B8DE5;
+        }
+
+        #zheng-oss-web .s-profile > a {
+            background: url(images/zheng-oss.png) left top no-repeat;
+        }
+
+        #test #header {
+            background: test;
+        }
+
+        #test .content_tab {
+            background: test;
+        }
+
+        #test .s-profile > a {
+            background: url(test) left top no-repeat;
+        }
     </style>
 </head>
 <body>
@@ -67,14 +117,16 @@
                     <img src="${request.contextPath}/static/images/avatar.jpg"/>
                 </div>
                 <div class="sp-info">
-                    ${user.username}，您好！
+                ${user.username}，您好!
                     <i class="zmdi zmdi-caret-down"></i>
                 </div>
             </a>
             <ul class="main-menu">
 
                 <li>
-                    <a class="waves-effect" href="javascript:Tab.addTab('个人资料', '${request.contextPath}/userInfo?id=${user.id}');"><i class="zmdi zmdi-account"></i>个人资料</a>
+                    <a class="waves-effect"
+                       href="javascript:Tab.addTab('个人资料', '${request.contextPath}/userInfo?id=${user.id}');"><i
+                            class="zmdi zmdi-account"></i>个人资料</a>
                 </li>
             </ul>
         </div>
@@ -82,19 +134,25 @@
         <!-- 菜单区 -->
         <ul class="main-menu">
             <li>
-                <a class="waves-effect" href="javascript:Tab.addTab('志愿活动', '${request.contextPath}/activity');"><i class="zmdi zmdi-home"></i> 志愿活动</a>
+                <a class="waves-effect" href="javascript:Tab.addTab('志愿活动', '${request.contextPath}/activity');"><i
+                        class="zmdi zmdi-home"></i> 志愿活动</a>
             </li>
             <li>
-                <a class="waves-effect" href="javascript:Tab.addTab('志愿组织', '${request.contextPath}/toTeam');"><i class="zmdi zmdi-accounts"></i> 志愿组织</a>
+                <a class="waves-effect" href="javascript:Tab.addTab('志愿组织', '${request.contextPath}/toTeam');"><i
+                        class="zmdi zmdi-accounts"></i> 志愿组织</a>
             </li>
             <li>
-                <a class="waves-effect" href="javascript:Tab.addTab('资讯', '/manage/user/index');"><i class="zmdi zmdi zmdi-more"></i> 资讯</a>
+                <a class="waves-effect" href="javascript:Tab.addTab('资讯', '/manage/user/index');"><i
+                        class="zmdi zmdi zmdi-more"></i> 资讯</a>
             </li>
             <li class="sub-menu system_menus system_1 0">
                 <a class="waves-effect" href="javascript:;"><i class="zmdi zmdi-accounts-list"></i> 公告</a>
                 <ul>
-                    <li><a class="waves-effect" href="javascript:Tab.addTab('系统公告', '${request.contextPath}/userSeeNotice');">系统公告</a></li>
-                    <li><a class="waves-effect" href="javascript:Tab.addTab('团队公告', '${request.contextPath}/userSeeTeamNotice');">团队公告</a></li>
+                    <li><a class="waves-effect"
+                           href="javascript:Tab.addTab('系统公告', '${request.contextPath}/userSeeNotice');">系统公告</a></li>
+                    <li><a class="waves-effect"
+                           href="javascript:Tab.addTab('团队公告', '${request.contextPath}/userSeeTeamNotice');">团队公告</a>
+                    </li>
                 </ul>
             </li>
 
@@ -117,7 +175,7 @@
             </ul>
         </div>
         <div class="content_main">
-            <div id="iframe_home" class="iframe cur" style="background-color: #f5f7f9" >
+            <div id="iframe_home" class="iframe cur" style="background-color: #f5f7f9">
             <#--<img src="../static/images/zheng-upms.png"/>-->
             </div>
         </div>

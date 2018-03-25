@@ -43,8 +43,8 @@
             </tr>
             </thead>
             <tbody>
-            <#if team?? &&(team?size>0)>
-                <#list team as team>
+            <#if teams1?? &&(teams1?size>0)>
+                <#list teams1 as team>
                 <tr>
 
                     <td>${team.teamName}</td>
@@ -74,13 +74,13 @@
             </thead>
             <tbody>
             <#if teams?? &&(teams?size>0)>
-                <#list teams as teams>
+                <#list teams as team>
                 <tr>
 
-                    <td>${teams.teamName}</td>
-                    <td>${teams.introduce}</td>
-                    <td>${teams.username}</td>
-                    <#if (teams.state==0)>
+                    <td>${team.teamName}</td>
+                    <td>${team.introduce}</td>
+                    <td>${team.username}</td>
+                    <#if (team.state==0)>
                         <td>还未通过审核</td>
                     <#else>
                         <td>已加入</td>

@@ -1,16 +1,13 @@
 package com.volunteer.controller;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import com.volunteer.pojo.*;
 import com.volunteer.pojo.vo.EntryVO;
 import com.volunteer.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;

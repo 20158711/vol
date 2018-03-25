@@ -151,15 +151,17 @@ public class MainController {
         //所有团队
         for (int i=0;i<teams.size();i++){
             TeamVO teamVO=new TeamVO();
-            teamVO.setId(teams.get(i).getId());
-            teamVO.setTeamName(teams.get(i).getTeamName());
-            User user1=userService.findById(teams.get(i).getLeader());
+            Team team=teams.get(i);
+            teamVO.setId(team.getId());
+            teamVO.setTeamName(team.getTeamName());
+            User user1=userService.findById(team.getLeader());
             teamVO.setUsername(user1.getUsername());
+            teamVO.setIntroduce(team.getIntroduce());
             teamVOS.add(teamVO);
         }
         //加入的团队
         User user= (User) request.getSession().getAttribute("user");
-        if (user!=null){
+        if (user==null){
             return "toLogin";
         }else {
             List<TeamUser> teamUsers=teamUserService.findByUserId(user.getId());
@@ -175,7 +177,8 @@ public class MainController {
                 teamVO.setState(teamUsers.get(j).getState());
                 teamVOList.add(teamVO);
             }
-            model.addAttribute("team",teamVOS);
+            System.out.println(teamVOS);
+            model.addAttribute("teams1",teamVOS);
             model.addAttribute("teams",teamVOList);
             return "team";
         }
