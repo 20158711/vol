@@ -61,7 +61,7 @@ public class TeamController {
         if (team==null){
             return "toLogin";
         }else {
-            List<Article> articles= (List<Article>) articleService.findById(team.getId());
+            List<Article> articles= articleService.findByTeamId(team.getId());
             for (int i=0;i<articles.size();i++){
                 List<EntryForm> entryForms=entryFormService.findByAid(articles.get(i).getId());
                 List<EntryVO> entryVOS=new ArrayList<>();
@@ -119,5 +119,22 @@ public class TeamController {
         return "teamActivity";
 
     }
+
+    @RequestMapping("/teamIn")
+    public String teamIn(@RequestParam(value = "id")Long id,Model model){
+        Team team=teamService.findById(id);
+        model.addAttribute("team",team);
+        return "teamIn";
+
+    }
+    @RequestMapping("/modifyTeam")
+    @ResponseBody
+    public Map<String, Object> modifyTeam(Team team){
+        teamService.update(team);
+        Map<String, Object> resultMap = new LinkedHashMap<>();
+        resultMap.put("message", "修改成功");
+        return resultMap;
+    }
+
 
 }
