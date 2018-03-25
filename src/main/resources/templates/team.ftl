@@ -72,8 +72,8 @@
             </tr>
             </thead>
             <tbody>
-            <#if teams?? &&(teams?size>0)>
-                <#list teams as team>
+            <#if teams1?? &&(teams1?size>0)>
+                <#list teams1 as team>
                 <tr>
 
                     <td>${team.teamName}</td>
