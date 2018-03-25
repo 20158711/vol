@@ -81,5 +81,15 @@ public class NoticeController {
         noticeService.addNotice(notice);
         return "seeTeamNotice";
     }
+    @RequestMapping("/deleteSyNotice")
+    public String delSyNotice(Long id){
+        noticeService.delSyNotice(id);
+        return "seeNotice";
+    }
+    @RequestMapping("/delTeamNotice")
+    public String delTeamNotice(Long id){
+        noticeService.delTeamNotice(id);
+        return "seeTeamNotice";
+    }
 
 }

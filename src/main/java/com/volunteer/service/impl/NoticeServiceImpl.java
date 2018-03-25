@@ -31,4 +31,14 @@ public class NoticeServiceImpl implements NoticeService {
     public Notice addNotice(Notice notice) {
         return notinceDao.save(notice);
     }
+
+    @Override
+    public void delSyNotice(Long id) {
+         notinceDao.deleteByIdAndType(id,0);
+    }
+
+    @Override
+    public void delTeamNotice(Long id) {
+        notinceDao.deleteByIdAndType(id,1);
+    }
 }

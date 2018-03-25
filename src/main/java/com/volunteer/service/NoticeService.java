@@ -12,4 +12,6 @@ public interface NoticeService {
     List<Notice> findTeamNotice(Long id);
     List<Notice> findAll(Long id);
     Notice addNotice(Notice notice);
+    void delSyNotice(Long id);
+    void delTeamNotice(Long id);
 }

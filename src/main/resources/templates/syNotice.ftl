@@ -46,9 +46,9 @@
                 <#list notice as notice>
                 <tr>
 
-                    <td>${notice.teamName}</td>
-                    <td>{notice.insert_time?string("yyyy-MM-dd HH:mm:ss")}</td>
-                    <td><button>删除</button></td>
+                    <td>${notice.content}</td>
+                    <td>${notice.insert_time?string("yyyy-MM-dd HH:mm:ss")}</td>
+                    <td><a href="${request.contextPath}/deleteSyNotice?id=${notice.id}"><button>删除</button></a></td>
                 </#list>
             </tr>
             <#else>

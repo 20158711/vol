@@ -63,7 +63,6 @@ public class TeamController {
             return "toLogin";
         }else {
             List<Article> articles= (List<Article>) articleService.findById(team.getId());
-
             for (int i=0;i<articles.size();i++){
                 List<EntryForm> entryForms=entryFormService.findByAid(articles.get(i).getId());
                 List<EntryVO> entryVOS=new ArrayList<>();

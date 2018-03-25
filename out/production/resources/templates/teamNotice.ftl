@@ -48,7 +48,7 @@
 
                     <td>${notice.content}</td>
                     <td>${notice.insert_time?string("yyyy-MM-dd HH:mm:ss")}</td>
-                    <td><button>删除</button></td>
+                    <td><a href="${request.contextPath}/delTeamNotice?${notice.id}"><button>删除</button></a> </td>
                 </#list>
             </tr>
             <#else>
@@ -68,7 +68,7 @@
                         &times;
                     </button>
                     <h4 class="modal-title" id="myModalLabel">
-                        添加系统公告
+                        添加团队公告
                     </h4>
                 </div>
                 <div class="modal-body">
