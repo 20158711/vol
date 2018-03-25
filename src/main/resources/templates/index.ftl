@@ -87,9 +87,9 @@
             <li>
                 <a class="waves-effect" href="javascript:Tab.addTab('志愿组织', '${request.contextPath}/toTeam');"><i class="zmdi zmdi-accounts"></i> 志愿组织</a>
             </li>
-            <li>
+            <#--<li>
                 <a class="waves-effect" href="javascript:Tab.addTab('资讯', '/manage/user/index');"><i class="zmdi zmdi zmdi-more"></i> 资讯</a>
-            </li>
+            </li>-->
             <li class="sub-menu system_menus system_1 0">
                 <a class="waves-effect" href="javascript:;"><i class="zmdi zmdi-accounts-list"></i> 公告</a>
                 <ul>

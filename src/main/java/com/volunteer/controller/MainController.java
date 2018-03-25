@@ -163,7 +163,7 @@ public class MainController {
         }
         //加入的团队
         User user= (User) request.getSession().getAttribute("user");
-        if (user!=null){
+        if (user==null){
             return "toLogin";
         }else {
             List<TeamUser> teamUsers=teamUserService.findByUserId(user.getId());
