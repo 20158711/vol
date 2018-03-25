@@ -6,6 +6,9 @@ import com.volunteer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.NoSuchElementException;
+import java.util.Optional;
+
 @Service("userService")
 public class UserServiceImpl implements UserService {
 
@@ -24,7 +27,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findById(Long id) {
-        return userDao.findById(id).get();
+        try {
+            return userDao.findById(id).get();
+        }catch (NoSuchElementException e){
+            System.out.println("id: "+id+" 没有数据");
+            return null;
+        }
     }
 
     @Override
