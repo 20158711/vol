@@ -178,6 +178,7 @@ public class MainController {
                 teamVO.setIntroduce(team.getIntroduce());
                 User user1=userService.findById(teams.get(j).getLeader());
                 teamVO.setUsername(user1.getUsername());
+                teamVO.setIntroduce(team.getIntroduce());
                 teamVO.setState(teamUsers.get(j).getState());
                 teamVOList.add(teamVO);
             }
