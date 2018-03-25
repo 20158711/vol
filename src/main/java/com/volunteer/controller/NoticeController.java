@@ -50,7 +50,6 @@ public class NoticeController {
             List<Notice> notice=noticeService.findAll(teamUser.get(i).getTeamId());
             notices.add(notice);
         }
-
         model.addAttribute("notice",notices);
         return "UserSyNotice";
     }
